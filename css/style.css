@@ -1,0 +1,433 @@
+html{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+}
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: #f0f0f0;
+}
+#main-section{
+    margin-bottom: 80px;
+}
+#main-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    background-color: white;
+}
+#main-h1{
+    font-family: "Roboto",sans-serif;
+    font-size: 45px;
+    font-weight: bold;
+    font-style: normal;
+    color: #D2BF37;
+}
+section{
+    background-color: #f0f0f0;
+}
+#all-winners-table{
+    width: 60%;
+}
+#top10-winners-table{
+    width: 60%;
+}
+#main-article{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+thead{
+    background-color: #D2BF37;
+}
+tbody{
+    background-color: white;
+}
+#main-article-header{
+    margin-top: 40px;
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+#main-h2{
+    font-family: "Roboto",sans-serif;
+    font-size: 35px;
+    font-weight: bold;
+    font-style: normal;
+    color: black;
+    margin: 0;
+}
+#switch input:checked{
+    z-index: 1;
+}
+#switch input:checked + label{
+    opacity: 1;
+    cursor: default;
+}
+#switch input:not(:checked) + label:hover{
+    opacity: 0.5;
+}
+#switch{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    position: relative;
+    height: 45px;
+    font-size: 0;
+    text-align: right;
+}
+#switch input{
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    opacity: 0;
+    cursor: pointer;
+    height: 45px;
+    width: 26px;
+    right: 0;
+    margin: 0;
+}
+#switch:hover .toggle-inside{
+    background: #C29E29;
+}
+#switch label{
+    font-family: 'Roboto',sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 20px;
+    opacity: 0.33;
+    transition: opacity 0.25s ease;
+    cursor: pointer;
+    display: block;
+    margin: 0 38px 0 0;
+    white-space: nowrap;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
+}
+#switch .toggle-outside{
+    height: 100%;
+    border-radius: 100px;
+    padding: 0;
+    overflow: hidden;
+    transition: 0.25s ease all;
+    background: #fff;
+    position: absolute;
+    width: 26px;
+    right: 0;
+    top: 0;
+}
+#switch .toggle-inside{
+    border-radius: 50%;
+    background: #D2BF37;
+    position: absolute;
+    transition: 0.25s ease all;
+    height: 20px;
+    width: 20px;
+    top: 3px;
+    right: 3px;
+}
+#switch input:checked ~ .toggle-outside .toggle-inside{
+    top: 3px;
+}
+#switch input ~ input:checked ~ .toggle-outside .toggle-inside{
+    top: 22px;
+}
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#footer-href{
+    text-decoration: none;
+    color: black;
+}
+#footer-href:hover{
+    color: #C29E29;
+}
+.table-button{
+    line-height: 16px !important;
+}
+.sort-arrows{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 3px;
+}
+.sort-arrows img{
+    visibility: visible;
+}
+th > div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+th, td{
+    white-space: nowrap;
+    vertical-align: middle !important;
+}
+.sort-th{
+    cursor: pointer;
+}
+.sort-th:hover *{
+    color: #374AD2;
+}
+.sort-th:hover img{
+    filter: invert(25%) sepia(33%) saturate(6956%) hue-rotate(231deg) brightness(85%) contrast(91%);
+}
+.click-person{
+    cursor: pointer;
+    transition: background-color 300ms;
+}
+#personal-info{
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+}
+#star-li{
+    list-style-image: url("../resources/pictures/star.svg");
+}
+#cross-li{
+    list-style-image: url("../resources/pictures/cross.svg");
+}
+#personal-info ul{
+    padding-left: 25px;
+}
+#achievements-list{
+    list-style-image: url("../resources/pictures/medal.svg");
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    padding-left: 25px;
+}
+.athlete-details{
+    width: 60%;
+}
+#achievements-h3{
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    color: #D2BF37;
+}
+#undo:hover img{
+    filter: invert(25%) sepia(33%) saturate(6956%) hue-rotate(231deg) brightness(85%) contrast(91%);
+
+}
+#main-h1 > span{
+    color: #D2BF37;
+}
+#section-delete{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+#redirect{
+    margin-top: 60px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+}
+#href-index{
+    text-decoration: underline;
+    color: black;
+}
+#href-index:hover{
+    color: #D2BF37;
+}
+#add-hrefs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+#add-hrefs img {
+    transition: width 300ms, height 300ms;
+}
+#form-div{
+    width: 70%;
+}
+form label{
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+}
+form > div{
+    margin-top: 30px;
+}
+#button-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#form-article-header{
+    margin-top: 20px;
+    width: 70%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+#edit-info{
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+}
+#unchecked-radio{
+    cursor: pointer;
+}
+#unchecked-radio:hover{
+    filter: invert(25%) sepia(33%) saturate(6956%) hue-rotate(231deg) brightness(85%) contrast(91%);
+}
+.add-something{
+    width: 40px;
+    height: 40px;
+}
+.add-something:hover img{
+    width: 39px;
+    height: 39px;
+}
+#add-achievement{
+    margin-left: 30px;
+}
+#add-athlete{
+    margin-right: 30px;
+}
+
+@media (max-width: 1440px) {
+    #all-winners-table{
+        width: 80%;
+    }
+    #top10-winners-table{
+        width: 80%;
+    }
+    #main-article-header{
+        width: 80%;
+    }
+    .athlete-details{
+        width: 80%;
+    }
+    #form-div{
+        width: 85%;
+    }
+    #form-article-header{
+        width: 85%;
+    }
+}
+@media (max-width: 1024px) {
+    #all-winners-table{
+        width: 90%;
+    }
+    #top10-winners-table{
+        width: 90%;
+    }
+    #main-article-header{
+        width: 90%;
+    }
+    .athlete-details{
+        width: 90%;
+    }
+    #form-div{
+        width: 90%;
+    }
+    #form-article-header{
+        width: 90%;
+    }
+}
+@media (max-width: 768px) {
+    #all-winners-table{
+        width: 96%;
+    }
+    #top10-winners-table{
+        width: 96%;
+    }
+    #main-article-header{
+        margin-top: 5vw;
+        width: 96%;
+    }
+    .athlete-details{
+        width: 96%;
+    }
+    #form-article-header{
+        margin-top: 15px;
+        width: 92%;
+    }
+    #achievements-h3{
+        font-size: 5vw;
+    }
+    #main-h2{
+        font-size: 5.4vw;
+    }
+    #main-h1{
+        font-size: 7vw;
+    }
+    #form-div{
+        width: 92%;
+    }
+    #main-header{
+        height: 25vw;
+    }
+
+    #personal-info{
+        font-size: 3.7vw;
+    }
+    #achievements-list{
+        font-size: 3.7vw;
+    }
+    .table{
+        font-size: 3.7vw;
+    }
+    #switch label{
+        line-height: 10px;
+        font-size: 12px;
+        margin: 0 28px 0 0;
+    }
+    #switch{
+        height: 40px;
+    }
+    #switch input{
+        height: 45px;
+        width: 23px;
+    }
+    #switch .toggle-outside{
+        width: 23px;
+    }
+    #switch .toggle-inside{
+        height: 17px;
+        width: 17px;
+        top: 3px;
+    }
+    #switch input:checked ~ .toggle-outside .toggle-inside{
+        top: 3px;
+    }
+    #switch input ~ input:checked ~ .toggle-outside .toggle-inside{
+        top: 20px;
+    }
+}
+
